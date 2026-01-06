@@ -1,0 +1,19 @@
+# Защита от hotlinking (воровства изображений)
+RewriteEngine on
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?yourdomain.com [NC]
+RewriteRule \.(jpg|jpeg|png|gif|svg)$ - [F,NC]
+
+# Запрет доступа к исходникам
+<FilesMatch "\.(html|css|js)$">
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "DENY"
+</FilesMatch>
+
+# Блокировка wget, curl и подобных инструментов
+RewriteCond %{HTTP_USER_AGENT} ^.*(curl|wget|python|scrapy).*$ [NC]
+RewriteRule .* - [F,L]
+
+# Защита от копирования через SaveAs
+Header set Content-Disposition "inline"
+Header set X-Download-Options "noopen"
