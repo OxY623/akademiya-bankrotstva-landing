@@ -1,0 +1,120 @@
+.calculator {
+  background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+  padding: 40px;
+  border-radius: 16px;
+  margin-top: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.calculator-row {
+  margin-bottom: 32px;
+}
+
+.calculator-label {
+  font-size: 16px;
+  color: #ffffff;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.calculator-input {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.calculator-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  background: #00ff88;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.calculator-input::-webkit-slider-thumb:hover {
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+  transform: scale(1.2);
+}
+
+.calculator-input::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  background: #00ff88;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.calculator-input::-moz-range-thumb:hover {
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+  transform: scale(1.2);
+}
+
+.calculator-value {
+  text-align: center;
+  font-size: 24px;
+  color: #00ff88;
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+.calculator-result {
+  background: rgba(0, 255, 136, 0.1);
+  padding: 32px;
+  border-radius: 12px;
+  border: 2px solid #00ff88;
+  margin-top: 32px;
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  font-size: 18px;
+}
+
+.result-row.highlight {
+  margin-bottom: 0;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.result-label {
+  color: #e0e0e0;
+}
+
+.result-value {
+  color: #00ff88;
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .calculator {
+    padding: 20px;
+  }
+
+  .calculator-result {
+    padding: 20px;
+  }
+
+  .result-row {
+    font-size: 16px;
+  }
+
+  .result-row.highlight {
+    font-size: 20px;
+  }
+}
